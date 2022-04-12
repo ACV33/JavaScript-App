@@ -13,7 +13,7 @@ let pokemonList = [
 ];
 
 for (const pokemon of pokemonList) {
-  document.write("pikachu" + " " + "height: 2");
-  document.write("charizard" + " " + "height: 6");
-  document.write("eevee" + " " + "height: 1");
+  document.write("Pikachu" + " " + "(height: 2)");
+  document.write("Charizard" + " " + "(height: 6)");
+  document.write("Eevee" + " " + "(height: 1)");
 }
