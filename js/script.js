@@ -1,13 +1,19 @@
 let pokemonList = [
-  {name: "pikachu", height: "2", type: "electric"},
-  {name: "charizard", height: "6" type: "fire", "flying"},
-  {name: "eevee", height: "1", type: "normal" }
-  document.write("pikachu");
+  {name: "pikachu",
+  height: "2",
+  types: "electric
+  "},
+  {name: "charizard",
+  height: "6",
+  types: "fire",
+  "flying"},
+  {name: "eevee",
+  height: "1",
+  types: "normal" }
 ];
 
-let text = "";
-let i = 0;
-for (;pokemonList[i];){
-  text = text + " " + pokemonList[i];
-  i++;
+for (const pokemon of pokemonList) {
+  document.write("pikachu (height: 2)");
+  document.write("charizard (height: 6)")
+  document.write("eevee (height: 1)")
 }
