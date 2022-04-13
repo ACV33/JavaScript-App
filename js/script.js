@@ -17,5 +17,5 @@ let pokemonList = [
 for (const pokemon of pokemonList) {
   document.write("Pikachu (height: 2)" + " ");
   document.write("Charizard" +  "(height: 6)" + " ");
-  document.write("Eevee" + " " + "(height: 1)" + " ");
+  document.write("Eevee" + "(height: 1)" + " ");
 }
