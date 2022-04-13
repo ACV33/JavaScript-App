@@ -19,3 +19,6 @@ for (const pokemon of pokemonList) {
   document.write("Charizard" +  "(height: 6)" + " ");
   document.write("Eevee" + "(height: 1)" + " ");
 }
+
+let pokemonList.height = 5;
+if (height)
