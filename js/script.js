@@ -1,24 +1,23 @@
 let pokemonList = [
-  {name: "pikachu",
+  {name: "Pikachu",
   height: "2",
   types: "electric"
 },
 {
-  name: "charizard",
+  name: "Charizard",
   height: "6",
   types: "fire"
 },
 {
-  name: "eevee",
+  name: "Eevee",
   height: "1",
   types: "normal" }
 ];
 
 for (const pokemon of pokemonList) {
-  document.write("Pikachu (height: 2)" + " ");
-  document.write("Charizard" +  "(height: 6)" + " ");
-  document.write("Eevee" + "(height: 1)" + " ");
+  if (pokemon.height > 5){
+    document.write (pokemon.name + " that's a big Pokemon!");
+  } else{
+    document.write(`<p>${pokemon.name} is ${pokemon.height} feet tall and is a ${pokemon.types} type.</p>`);
+  }
 }
-
-let pokemonList.height = 5;
-if (height)
