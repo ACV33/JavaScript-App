@@ -1,22 +1,3 @@
-let pokemonList = [
-  {name: "Pikachu",
-  height: "2",
-  types: "electric"
-},
-{
-  name: "Charizard",
-  height: "6",
-  types: "fire"
-},
-{
-  name: "Eevee",
-  height: "1",
-  types: "normal" }
-];
-
-let pokemonList2 = [
-  {name: "Jigglypuff"}
-]
 // A conditonal that lists the pokemons out with there height and type
 // function printArrayDetails(list){
 // for (const pokemon of pokemonList) {
@@ -29,6 +10,40 @@ let pokemonList2 = [
 //printArrayDetails(pokemonList);
 //printArrayDetails(pokemonList2);
 
-pokemonList.forEach(function(pokemon) {
+
+let pokemonRepository = (function () {
+  let pokemonList = [
+    {name: "Pikachu",
+    height: "2",
+    types: "electric"
+  },
+  {
+    name: "Charizard",
+    height: "6",
+    types: "fire"
+  },
+  {
+    name: "Eevee",
+    height: "1",
+    types: "normal" }
+  ];
+
+  function add(pokemon) {
+    pokemonList.push(pokemon);
+  }
+
+  function getAll() {
+    return pokemonRepository;
+  }
+
+  return {
+    add: add,
+    getAll: getAll
+    };
+})();
+
+pokemonList.forEach(pokemonRepository);
   document.write(pokemon.name + ' is ' + pokemon.height + ' and is a ' + pokemon.types + 'type.');
-});
+
+pokemonRepository.getAll(pokemonList);
+pokemonRepository.add(item);
