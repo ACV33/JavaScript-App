@@ -81,12 +81,13 @@ let pokemonRepository = (function () {
        return response.json();
      }).then(function (details) {
 
-       item.imageUrl = details.sprites.front_default;
+       item.spriteUrl = details.sprites.front_default;
+       item.svgUrl = details.sprites.other.dream_world.front_default;
        item.height = details.height;
        item.types = details.types;
 
     let types = [];
-       details.types.forEach((item) => types.push(item.type.name));
+       details.types.forEach((pokemon) => types.push(pokemon.type.name));
        item.types = types;
 
      }).catch(function (e) {
@@ -96,13 +97,13 @@ let pokemonRepository = (function () {
 
    function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
-            showModal(pokemonList);
+            showModal(pokemon);
      });
    }
 
-function showModal(pokemonList) {
-  let modalTitle = $(".modal-title");
-  let modalBody = $(".modal-body");
+function showModal(pokemon) {
+  let modalTitle = $('.modal-title');
+  let modalBody = $('.modal-body');
 
 
   modalTitle.empty();
@@ -115,13 +116,13 @@ function showModal(pokemonList) {
         let pokemonSvg = $(`<img class="modal-img mx-auto" src="${pokemon.svgUrl}" alt="SVG illustration of Pokemon">`);
 
 
-  modalTitle.append(titleElement);
-  modalBody.append(closeButtonElement);
-  modalBody.append(titleElement);
-  modalBody.append(heightELement);
-  modalBody.append(typesElement);
-  modalBody.append(imgElement);
-}
+              modalTitle.append(pokemonName);
+               modalTitle.append(pokemonSprite);
+               modalBody.append(pokemonHeight);
+               modalBody.append(pokemonTypes);
+               modalBody.append(pokemonSvg);
+           }
+
 
   return {
     add: add,
